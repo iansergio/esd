@@ -15,5 +15,6 @@ public class Main {
         tree.add(35);
         tree.add(45);
         
+        tree.printTree();
     }
 }

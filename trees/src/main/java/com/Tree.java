@@ -11,23 +11,42 @@ public class Tree {
         add(value, this.root, null);
     }
 
-    public Node add(int value, Node currentNode, Node parent) {
+    private Node add(int value, Node currentNode, Node parent) {
         if (currentNode == null) {
             Node node = new Node(value);
-            node.parent = parent;
+            node.setParent(parent);
+            node.setHeight();
             return node;
         }
-
-        if (value < currentNode.value) {
-            // Criando um novo nó e colocando ele no lado esquerdo do nó atual
-            currentNode.left = add(value, currentNode.left, parent);
+        
+        if (value < currentNode.getValue()) {
+            Node node = add(value, currentNode.getLeft(), currentNode);
+            currentNode.setLeft(node);
+            currentNode.setHeight();
         }
-
-        if (value > currentNode.value) {
-            // Criando um novo nó e colocando ele no lado direito do nó atual
-            currentNode.right = add(value, currentNode.right, parent);
+        
+        if (value > currentNode.getValue()) {
+            Node node = add(value, currentNode.getRight(), currentNode);
+            currentNode.setRight(node);
+            currentNode.setHeight(); 
         }
 
         return currentNode;
+    }
+
+    public void printTree() {
+        printTree(this.root, 0);
+    }
+
+    private void printTree(Node node, int level) {
+        if (node == null)
+            return;
+
+        printTree(node.getRight(), level + 1);
+
+        System.out.println("    ".repeat(level) +
+                node.getValue() + " [" + node.getHeight() + "]");
+
+        printTree(node.getLeft(), level + 1);
     }
 }
