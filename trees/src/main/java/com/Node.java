@@ -6,7 +6,6 @@ public class Node {
     private Node right;
     private Node parent;
     private int height;
-    private int bf;
 
     public Node() {
     }
@@ -59,10 +58,9 @@ public class Node {
     }
 
     public int getBf() {
-        return bf;
-    }
+        int leftHeight = (left != null) ? left.height : -1;
+        int rightHeight = (right != null) ? right.height : -1;
 
-    public void setBf(int bf) {
-        this.bf = bf;
+        return leftHeight - rightHeight;
     }
 }
