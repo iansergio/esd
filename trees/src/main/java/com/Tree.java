@@ -36,39 +36,16 @@ public class Tree {
     }
 
     public void calculateAndSetHeight(Node node) {
-        int leftHeight;
-        int rightHeight;
-
-        if (node.getLeft() != null) {
-            leftHeight = node.getLeft().getHeight();
-        } else {
-            leftHeight = -1;
-        }
-
-        if (node.getRight() != null) {
-            rightHeight = node.getRight().getHeight();
-        } else {
-            rightHeight = -1;
-        }
+        // Ternário massa | variavel = (condicao) ? valorSeVerdadeiro : valorSeFalso;
+        int leftHeight = (node.getLeft() != null) ? node.getLeft().getHeight() : -1 ;
+        int rightHeight = (node.getRight() != null) ? node.getRight().getHeight() : -1;
 
         node.setHeight(1 + (Math.max(leftHeight, rightHeight)));
     }
 
     public void calculateBalanceFactor(Node node) {
-        int leftHeight;
-        int rightHeight;
-
-        if (node.getLeft() != null) {
-            leftHeight = node.getLeft().getHeight();
-        } else {
-            leftHeight = -1;
-        }
-
-        if (node.getRight() != null) {
-            rightHeight = node.getRight().getHeight();
-        } else {
-            rightHeight = -1;
-        }
+        int leftHeight = (node.getLeft() != null) ? node.getLeft().getHeight() : -1 ;
+        int rightHeight = (node.getRight() != null) ? node.getRight().getHeight() : -1;
 
         node.setBf(leftHeight - rightHeight);
     }
