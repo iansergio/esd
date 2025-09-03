@@ -8,6 +8,9 @@ public class Node {
     private int height;
     private int bf;
 
+    public Node() {
+    }
+
     public Node(int value) {
         this.value = value;
         this.left = null;
@@ -51,23 +54,8 @@ public class Node {
         return height;
     }
 
-    public void setHeight() {
-        int leftHeight;
-        int rightHeight;
-
-        if (left != null) {
-            leftHeight = left.height;
-        } else {
-            leftHeight = -1;
-        }
-
-        if (right != null) {
-            rightHeight = right.height;
-        } else {
-            rightHeight = -1;
-        }
-
-        this.height = 1 + (Math.max(leftHeight, rightHeight));
+    public void setHeight(int height) {
+        this.height = height;
     }
 
     public int getBf() {
