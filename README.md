@@ -57,6 +57,14 @@
 
 - Devolver o nó atual para continuar a recursão
 
+## Rotações 
+
+### Rotação Simples à Direita
+- Se o fator de balanceamento for maior que 1 e o valor inserido for menor que o valor do filho esquerdo do nó desbalanceado
+
+### Rotação Simples à Esquerda
+- Se o fator de balanceamento for menor que -1 e o valor inserido for maior que o valor do filho direito do nó desbalanceado
+
 ## Desenho das árvores
 
 ### Ordem de inserção: [40, 20, 60, 10, 30, 25]
