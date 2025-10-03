@@ -33,3 +33,33 @@ Correção: Rotação simples à esquerda no filho (10). Rotação simples à di
 
 Causa: Inserção na subárvore esquerda do filho direito. 10 -> 30 -> **20**  
 Correção: Rotação simples à direita no filho (30). Rotação simples à esquerda no 10
+
+
+# Árvore Rubro Negra
+Também é uma árvore binária de busca autobalanceada porém **utiliza duas cores distintas em cada nó**. 
+As regras durante a inserção e remoção são seguidas através das cores (no caso será **vermelho e preto**) e, se forem violadas é aplicado uma rotação
+
+## Terminologias
+- Nó avô
+  - Pai do pai do último nó inserido
+
+-  Nó tio
+  - Filho oposto do avô
+
+- Nó nulo
+  - O oposto do filho de um nó onde o pai só tem um filho
+ 
+- Nó externo
+  - Quando o nó inserido é maior que o pai
+
+- Nó interno
+  - Quando o nó inserido é menor que o pai
+ 
+## Regras
+- Todo nó é vermelho ou preto
+- A raiz é sempre preta
+- Se um nó for vermelho, seus filhos devem ser pretos
+- Todo caminho da raiz para uma folha, ou para um filho nulo, tem que conter o mesmo número de nós pretos
+
+## Regras para inserção
+- 
