@@ -62,4 +62,14 @@ As regras durante a inserção e remoção são seguidas através das cores (no 
 - Todo caminho da raiz para uma folha, ou para um filho nulo, tem que conter o mesmo número de nós pretos
 
 ## Regras para inserção
-- 
+
+| Situação pós inserção          | Caso        | Ação                                                                 |
+|--------------------------------|-------------|----------------------------------------------------------------------|
+| Pai é preto                    | Válido      | –                                                                    |
+| Pai vermelho, tio vermelho     | Recoloração | Recolorir o pai e o tio para preto. Avô vira vermelho. Se isso causar violação acima, continuar subindo |
+
+| Situação pós inserção                                  | Caso    | Ação                                                                 |
+|--------------------------------------------------------|---------|----------------------------------------------------------------------|
+| Pai vermelho, tio preto, nó é filho externo (valor inserido maior que o pai) | Externo | Fazer **rotação simples** no avô + recoloração |
+| Pai vermelho, tio preto, nó é filho interno (valor inserido menor que o pai) | Interno | Fazer **rotação dupla** (pai e avô) + recoloração |
+
